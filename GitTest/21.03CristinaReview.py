@@ -51,3 +51,28 @@ info_account.withdraw(160000)
 info_account.info()
 
 
+# Создайте класс Student с атрибутами name, grades (список с оценками).
+# Создайте 2 метода: add_grade(grade) - добавить оценку, average() - возвращает средний балл.
+class Student:
+    def __init__(self, name, grades):
+        if all(type(x) == int for x in grades):
+            self.name = name
+            self.grades = grades
+        else:
+            print("Некорректный тип данных!")
+
+    def add_grade(self,grade):
+        if type(grade) == int:
+            self.grades.append(grade)
+        else:
+            print("Некорректный тип данных!")
+
+    def average_grade(self):
+        return sum(self.grades)/len(self.grades)
+
+student1 = Student("John Smith", [1, 2, 3, 4, 5])
+student1.add_grade(5)
+print(student1.grades)
+print(student1.average_grade())
+
+
