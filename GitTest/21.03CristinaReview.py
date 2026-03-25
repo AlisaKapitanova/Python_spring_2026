@@ -78,35 +78,67 @@
 # Создайте класс Calculator с атрибутом value (по умолчанию 0). Создайте методы add(x) - прибавить число, sub(x) - вычесть число,
 # mul(x) - умножить на число, div(x) - разделить на число (с проверкой на 0) и show() - выводит текущее значение.
 
-class Calculator:
-    def __init__(self, value = 0):
-        self.value = value
+# class Calculator:
+#     def __init__(self, value = 0):
+#         self.value = value
+#
+#     def add(self, x):
+#         self.value += x
+#
+#     def sub(self, x):
+#         self.value -= x
+#
+#     def mul(self, x):
+#         self.value *= x
+#
+#     def div(self, x):
+#         if(x == 0):
+#             print("На 0 делить нельзя")
+#         else:
+#             self.value /= x
+#
+#     def show(self):
+#         print(self.value)
+#
+# a = Calculator(10)
+# a.add(5)
+# a.show()
+# a.mul(2)
+# a.show()
+# a.div(9)
+# a.show()
+# a.sub(6)
+# a.show()
 
-    def add(self, x):
-        self.value += x
+# HW Task 2 Создайте класс TrafficLight с атрибутом color ( изначально red) и методом switch(),
+# который меняет цвета по кругу, а также методом show(), который выводит текущий цвет.
 
-    def sub(self, x):
-        self.value -= x
+class TrafficLight:
+    def __init__(self):
+        self.colors = ["red", "yellow", "green", "yellow"]
+        self.index = 0
+        self.color = self.colors[self.index]
 
-    def mul(self, x):
-        self.value *= x
+    def switch(self):
+        self.index += 1
+        if self.index >= len(self.colors):
+            self.index = 0
 
-    def div(self, x):
-        if(x == 0):
-            print("На 0 делить нельзя")
-        else:
-            self.value /= x
+        self.color = self.colors[self.index]
 
     def show(self):
-        print(self.value)
+        print(self.color)
 
-a = Calculator(10)
-a.add(5)
-a.show()
-a.mul(2)
-a.show()
-a.div(9)
-a.show()
-a.sub(6)
-a.show()
+tr_light = TrafficLight()
 
+tr_light.show()
+tr_light.switch()
+tr_light.show()
+tr_light.switch()
+tr_light.show()
+tr_light.switch()
+tr_light.show()
+tr_light.switch()
+tr_light.show()
+tr_light.switch()
+tr_light.show()
