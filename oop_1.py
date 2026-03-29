@@ -15,20 +15,20 @@
 # width      → параметр
 # height     → параметр
 
-class Rectangle:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-
-    def area(self):
-        return self.width * self.height
-
-    def perimeter(self):
-        return 2 * (self.width + self.height)
-
-test = Rectangle(5, 2)
-print(test.area())
-print(test.perimeter())
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def area(self):
+#         return self.width * self.height
+#
+#     def perimeter(self):
+#         return 2 * (self.width + self.height)
+#
+# test = Rectangle(5, 2)
+# print(test.area())
+# print(test.perimeter())
 
 # 2
 # Автомобиль
@@ -51,3 +51,31 @@ print(test.perimeter())
 # Что такое and, or? Приведите пример их использования.
 # Что такое цикл? Чем отличается for от while?
 # Что такое функция? Зачем она нужна?
+
+# Создайте класс Person с атрибутами name и age и методом introduce(),
+# который выводит: Привет, меня зовут <name>, мне <age> лет.
+# Создайте класс-наследник Student, который добавляет атрибут school
+# и переопределяет метод introduce(), чтобы добавить информацию о школе.
+# Пример: Привет, меня зовут Аня, мне 15 лет, я учусь в школе №123.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Привет, меня зовут {self.name}, мне {self.age} лет.")
+
+
+class Student(Person):
+    def __init__(self, name, age, school):
+        super().__init__(name, age)
+        self.school = school
+
+    def introduce(self):
+        print(f"Привет, меня зовут {self.name}, мне {self.age} лет, я учусь в школе {self.school}.")
+
+
+student = Student("Аня", 15, "№123")
+
+student.introduce()
